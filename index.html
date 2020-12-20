@@ -48,13 +48,23 @@
         //Javascript variables
         var searchCityArray = [];
         //functions definition
+        for (var i=0; i < searchCityArray.length; i++){
+            var button = $("<button>")
+                .addClass("btn btn-search")
+                .text(searchCityArray[i]);
+                $(".btn btn-search").append(button);
+        }
         //function calls
+        // renderButtons();
         //event listener 
         
 
         $(".btn-search").on("click", function(e){
             e.preventDefault();
             console.log("You've searched for something.")
+            var newCitySearch = $("#city-name").val();
+            searchCityArray.push(newCitySearch);
+            localStorage.setItem("searchCityArray", searchCityArray);
         })
       });
     </script>
