@@ -42,7 +42,17 @@
         </div>
         <div class="col-sm-9">
           <div id="city-data" class="card"></div>
-          <div id="forecast" class="card">Forecast</div>
+          <div id="forcast-section" class="d-none">
+            <div id="forecast" class="card">5 Day Forecast:</div>
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <img src="" class="rounded" alt="">
+                </div>
+            </div> 
+          </div>
+          
+          </div>
         </div>
       </div>
     </div>
@@ -79,6 +89,7 @@
             url: queryURL,
             method: "GET",
           }).then(function (response) {
+              $("#city-data").empty();
             console.log(response);
             var dateString = new Date(1608502800 * 1000).toLocaleDateString(
               "en-US"
@@ -124,15 +135,15 @@
 
                 // api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key}
 
-                $.ajax({
-              url:
-                "http://api.openweathermap.org/data/2.5/forecast?q=" +
+            //     $.ajax({
+            //   url:
+            //     "http://api.openweathermap.org/data/2.5/forecast?q=" +
                 
-                cityName +
+            //     cityName +
                
-                "&appid=de9e8f2ea3d90fcbbef4dedd2ac9d04a",
-              method: "GET",
-            }).then(function (response) {
+            //     "&appid=de9e8f2ea3d90fcbbef4dedd2ac9d04a",
+            //   method: "GET",
+            // }).then(function (response) {
 
             });
           });
